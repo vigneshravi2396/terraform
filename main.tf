@@ -16,7 +16,7 @@ resource "aws_key_pair" "tf_key" {
   public_key = tls_private_key.rsa.public_key_openssh
 }
 
-resource "tls_private_key" "rsa" {
+resource "tls_private_key" "rsa-4096-ex" {
   algorithm = "RSA"
   rsa_bits = 4096
 }
