@@ -20,10 +20,10 @@ resource "tls_private_key" "rsa" {
   algorithm = "RSA"
   rsa_bits = 4096
 }
-resource "local_file" "tf-key" {
-    content = tls_private_key.rsa.public_key_pem
-    filename = "tffile"
-}
+#resource "local_file" "tf-key" {
+ #   content = tls_private_key.rsa.public_key_pem
+  #  filename = "tffile"
+#}
 resource "aws_instance" "jenkinserver" {
   ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
