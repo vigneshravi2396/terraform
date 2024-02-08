@@ -30,6 +30,6 @@ resource "aws_instance" "jenkinserver" {
   key_name      =  "tf_key"
 
   tags = {
-    Name = "core-linux"
+    Name = "vicky"
   }
 }
