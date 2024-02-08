@@ -16,7 +16,7 @@ resource "aws_key_pair" "tf_key" {
   public_key = tls_private_key.rsa.public_key_openssh
 }
 
-resource "tls_private_key" "rsa-4096-ex" {
+resource "tls_private_key" "rsa" {
   algorithm = "RSA"
   rsa_bits = 4096
 }
@@ -32,11 +32,4 @@ resource "aws_instance" "jenkinserver" {
   tags = {
     Name = "vicky"
   }
-}
-output "key_name" {
-  value = aws_key_pair.tf_key.tf_key
-}
-
-output "public_key_file_path" {
-  value = local_file.tf-key.vicky
 }
