@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+  app:
+    build: .
+    command: ./mvnw spring-boot:run
+    volumes:
+      - .:/app
+    ports:
+      - 8080:8080
