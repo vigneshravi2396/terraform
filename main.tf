@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "tf_key" {
-  key_name = "demo"
+  key_name = "tf_key"
   public_key = tls_private_key.rsa.public_key_openssh
 }
 
@@ -27,7 +27,7 @@ resource "local_file" "tf-key" {
 resource "aws_instance" "jenkinserver" {
   ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
-  key_name      =  "demo"
+  key_name      =  "tf_key"
 
   tags = {
     Name = "vicky"
