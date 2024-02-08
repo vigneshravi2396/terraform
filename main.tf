@@ -33,3 +33,10 @@ resource "aws_instance" "jenkinserver" {
     Name = "vicky"
   }
 }
+output "key_name" {
+  value = aws_key_pair.tf_key.tf_key
+}
+
+output "public_key_file_path" {
+  value = local_file.tf-key.vicky
+}
