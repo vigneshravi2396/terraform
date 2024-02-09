@@ -45,4 +45,4 @@ output "public_ip" {
 output "private_ip" {
   value = aws_instance.jenkindevserver.private_ip
 }
-#addd
+#addd newfile
