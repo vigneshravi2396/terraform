@@ -24,7 +24,7 @@ resource "local_file" "tff-key" {
     content = tls_private_key.rsa.public_key_pem
     filename = "vicky"
 }
-resource "aws_instance" "jenkinserver" {
+resource "aws_instance" "jenkindevserver" {
   ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
   key_name      =  "tff_key"
