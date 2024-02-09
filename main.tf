@@ -20,16 +20,28 @@ resource "tls_private_key" "rsa" {
   algorithm = "RSA"
   rsa_bits = 4096
 }
-resource "local_file" "tf-key" {
+resource "local_file" "tff-key" {
     content = tls_private_key.rsa.public_key_pem
     filename = "vicky"
 }
 resource "aws_instance" "jenkinserver" {
   ami           = "ami-0c7217cdde317cfec"
   instance_type = "t2.micro"
-  key_name      =  "tf_key"
+  key_name      =  "tff_key"
 
   tags = {
     Name = "vicky"
   }
+}
+
+output "instance_id" {
+  value = aws_instance.jenkinserver.id
+}
+
+output "public_ip" {
+  value = aws_instance.jenkinserver.public_ip
+}
+
+output "private_ip" {
+  value = aws_instance.jenkinserver.private_ip
 }
