@@ -35,13 +35,13 @@ resource "aws_instance" "jenkindevserver" {
 }
 
 output "instance_id" {
-  value = aws_instance.jenkinserver.id
+  value = aws_instance.jenkindevserver.id
 }
 
 output "public_ip" {
-  value = aws_instance.jenkinserver.public_ip
+  value = aws_instance.jenkindevserver.public_ip
 }
 
 output "private_ip" {
-  value = aws_instance.jenkinserver.private_ip
+  value = aws_instance.jenkindevserver.private_ip
 }
