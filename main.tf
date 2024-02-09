@@ -11,8 +11,8 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_key_pair" "tf_key" {
-  key_name = "tf_key"
+resource "aws_key_pair" "tff_key" {
+  key_name = "tff_key"
   public_key = tls_private_key.rsa.public_key_openssh
 }
 
@@ -22,7 +22,7 @@ resource "tls_private_key" "rsa" {
 }
 resource "local_file" "tff-key" {
     content = tls_private_key.rsa.public_key_pem
-    filename = "vicky"
+    filename = "vickyd"
 }
 resource "aws_instance" "jenkindevserver" {
   ami           = "ami-0c7217cdde317cfec"
