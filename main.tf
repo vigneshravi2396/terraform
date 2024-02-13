@@ -22,7 +22,7 @@ resource "tls_private_key" "rsa" {
 }
 resource "local_file" "tff-key" {
     content = tls_private_key.rsa.private_key_pem
-    filename = "tff_key.pem"
+    filename = "vicky_key.pem"
 }
 resource "aws_instance" "jenkindevserver" {
   ami           = "ami-0c7217cdde317cfec"
